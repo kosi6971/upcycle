@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+main{
+    padding-top: 120px;
+}
+
+.furnitureIntroImgZone{
+    display: inline-block;
+}
+
+.furnitureIntroImgInZone{
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 600px;
+
+}
+
+.furnitureIntroImgInZone>img{
+    position: absolute;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 600px;
+    top: 100%;
+    transition: 1s;
+    opacity: 0;
+}
+
+.furnitureIntroImgInZone>img:first-child{
+    top: 0;
+    opacity: 1;
+}
+
+.furnitureIntroBtnZone{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.furnitureIntroBtnZone>img{
+    width: 50px;
+    margin: 0 10px;
+    border: 1px solid black;
+    transition: .5s;
+}
+
+.furnitureIntroBtnZone>img:hover{
+    border: 1px solid red;
+}
+
+.furnitureIntroText{
+    position: relative;
+    display: inline-block;
+    top: -215px;
+    left: 50px;
+}
+
+.furnitureIntroText>h1{
+    font-size: 32px;
+}
+
+.furnitureIntroText>h2{
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.furnitureIntroText>p{
+    font-size: 18px;
+    line-height: 27px;
+}
+
+/* charCon */
+#charCon{
+    border: 1px solid black;
+    width: 70%;
+    margin: 100px auto;
+}
+
+#charCon>img{
+    display: inline-block;
+}
+
+.charConText{
+    display: inline-block;
+    margin: 140px;
+}
+
+.charConText>h1{
+    color: rgb(150, 150, 150);
+    margin: 20px 0 5px 0;
+    font-size: 30px;
+}
+
+.charConText>p{
+    display: inline-block;
+    font-size: 25px;
+}
+/* charCon */
+
+/********* [ 간단 가구 소개 ] *********/
+
+#furniturIntroZone{
+    position: relative;
+    height: 1000px;
+}
+
+.furniturIntroImgZone{
+    position: absolute;
+    width: 500px;
+    height: 800px;
+    overflow: hidden;
+    left: 5%;
+    transition: 2s;
+}
+
+.furniturIntroImgZone>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    transition: 1s;
+}
+
+.furnitureImgOp1{
+    opacity: 1;
+}
+
+.furnitureImgOp2{
+    opacity: 0;
+}
+
+.furniturIntroTextZone{
+    position: absolute;
+    width: 100%;
+    left: 40%;
+    top: 20%;
+    transition: 2s;
+}
+
+.furniturIntroText{
+    position: absolute;
+    font-size: 60px;
+    transition: 1s;
+}
+
+.furniturIntroText>h1{
+    color: green;
+}
+
+.furniturTextOp1{
+    opacity: 1;
+}
+
+.furniturTextOp2{
+    opacity: 0;
+}
+/********* [ 간단 가구 소개 ] *********/
+
+/********* [ 재료 소개 ] *********/
+#chairMaterialZone{
+    position: relative;
+    height: 700px;
+}
+
+.materialMainImg{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid #6D7A71;
+    box-shadow: 0px 0px 50px 15px rgba(0,0,0,0.25);
+    top: 100px;
+    left: 200px;
+}
+
+.materialMainImg>img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border: 1px solid #6D7A71;
+    box-shadow: 0px 0px 50px 15px rgba(0,0,0,0.25);
+}
+
+.materialName{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    background-color: white;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 200px;
+    border: 1px solid #6D7A71;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: .3s;
+}
+
+.materialName:hover{
+    color: #CDD9C5;
+    background-color:  #6D7A71;
+}
+
+.materialPoint{
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #CDD9C5;
+    border: 1px solid #6D7A71;
+    transition: .3s;
+}
+
+.materialMainImg>.materialPoint:nth-of-type(2){
+    left: 50%;
+}
+
+.materialMainImg>.materialPoint:nth-of-type(3){
+    top: 50%;
+    left: 100%;
+}
+
+.materialMainImg>.materialPoint:nth-of-type(4){
+    top: 100%;
+    left: 50%;
+}
+
+.materialPoint:hover{
+    background-color: #6D7A71;
+}
+
+.materialScreenZone{
+    position: absolute;
+    top: 80px;
+    left: 60%;
+}
+
+.materialScreen{
+    position: absolute;
+    opacity: 0;
+    transition: 1s;
+}
+
+.materialScreen:nth-of-type(1){
+    opacity: 1;
+}
+
+.materialScreen>img{
+    width: 400px;
+    height: 400px;
+}
+
+.materialScreen>h1{
+    font-size: 35px;
+    margin: 30px 0 5px 0;
+}
+
+.materialScreen>p{
+    font-size: 20px;
+}
+/********* [ 재료 소개 ] *********/

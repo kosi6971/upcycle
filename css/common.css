@@ -1,0 +1,247 @@
+@charset "utf-8";
+/* 공통 모듈 CSS - common.css */
+
+@import url("../css/reset.css");
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Russo+One&display=swap');
+/* font-family: 'Russo One', sans-serif; */
+/* font-family: 'Inter', sans-serif; */
+
+body * {
+    /* outline: 1px solid red; */
+}
+
+html{
+    text-align: center;
+    user-select: none;
+}
+
+body{
+    background-color: white;
+    font-family: 'Inter';
+}
+
+.inBox{
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/*********** header ***********/
+.headBody{
+    background-color: rgba(211, 208, 200, 0);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    transition: .1s;
+}
+
+header img{
+    margin: 20px 0 10px 0 ;
+    width: 100px;
+}
+
+#headLine{
+    display: flex;
+    justify-content: space-around;
+}
+
+.headMenuBtn2,
+.headMenuBtn{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.headMenuBtn2{
+    height: 60px;
+}
+
+.headMenuBtn2 div,
+.headMenuBtn div{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: .3s;
+}
+
+.subMenu{
+    width: 100%;
+    position: absolute;
+    top: 101%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    height: 0;
+    overflow: hidden;
+    transition: height .4s ease-out;
+    z-index: 1;
+    background-color: rgba(174, 174, 174, 0);
+}
+
+.subMenu li{
+    height: 30px;
+    border-top: 0;
+    transition: .4s;
+    line-height: 30px;
+}
+
+.subMenu li a{
+    display: block;
+    height: 100%;
+}
+
+.headMenuBtn2:hover .subMenu1,
+.headMenuBtn:hover .subMenu1{
+    height: 93px;
+}
+
+.headMenuBtn2:hover .subMenu2,
+.headMenuBtn:hover .subMenu2{
+    height: 62px;
+}
+
+.headMenuBtn2:hover .subMenu3,
+.headMenuBtn:hover .subMenu3{
+    height: 31px;
+}
+
+.headMenuBtn2:hover .subMenu4,
+.headMenuBtn:hover .subMenu4{
+    height: 31px;
+}
+
+.headMenuBtn2:hover div,
+.headMenuBtn:hover div{
+    color: black;
+    font-size: 22px;
+}
+
+.subMenu li:hover{
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/*********** header ***********/
+
+/*********** footer ***********/
+#foot{
+    color: #CDD9C5;
+    background-color: #6D7A71;
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+.footLogo{
+    position: relative;
+    float: left;
+    margin-top: 20px;
+}
+
+.footLogo>img{
+    width: 100px;
+    display: inline-block;
+    position: relative;
+    top: -20px;
+}
+
+.footLogo>h1{
+    display: inline-block;
+    font-size: 60px;
+    font-weight: normal;
+    height: 100px;
+    line-height: 100px;
+    margin-left: 15px;
+}
+
+.footLogo>p{
+    position: absolute;
+    left: 57%;
+    top: 75%;
+    font-size: 17px;
+}
+
+.footData{
+    float: right;
+    text-align: right;
+}
+
+.footData>p{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.footLine{
+    width: 100%;
+    height: 1px;
+    display: inline-block;
+    background-color: white;
+}
+
+.sns{
+    float: right;
+    margin: 20px 0;
+}
+
+.instar>a>img{
+    height: 30px;
+}
+/*********** footer ***********/
+
+/*********** headerSub ***********/
+.subHead{
+    background-color: #6D7A71;
+}
+
+.subHead>.inBox{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subHead #headLine{
+    justify-content: flex-end;
+    height: 60px;
+}
+.subHead #headLine>.headMenuBtn{
+    width: 256px;
+    height: 100%;
+}
+
+.subHead>.inBox>a>img{
+    margin: 0;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.subHead>.inBox>a>h1{
+    display: inline-block;
+    height: 100%;
+    font-size: 40px;
+    color: #CDD9C5;
+    margin-left: 10px;
+    line-height: 60px;
+}
+
+.subHead .headMenuBtn div{
+    color: #CDD9C5;
+}
+
+.subHead .headMenuBtn:hover div{
+    color: white;
+}
+
+.subHead .subMenu li{
+    color: black;
+}
+
+/*********** headerSub ***********/

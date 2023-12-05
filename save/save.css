@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+
+/********* [ process set ] *********/
+#process{
+    position: relative;
+    /* 임시높이값 */
+    height: 800px;
+}
+
+.processZone{
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotateX(-5deg);
+    left: 50%;
+    transition: 0.2s;
+}
+
+.processPage{
+    position: absolute;
+}
+
+.processPage>*{
+    border-radius: 5%;
+}
+
+.processIn{
+    border: 2px solid rgba(0, 0, 0, 0.671);
+    position: relative;
+    left: 50%;
+    width: 550px;
+    height: 720px;
+    overflow: hidden;
+    transform: translateX(-50%);
+}
+
+
+.processIn>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.processBack{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.processText{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    background-color: #4646467a;
+    transition: 0.4s ease-in;
+}
+
+.processIn:hover>.processText{
+    top: 0;
+}
+
+.processText h1{
+    padding: 50px;
+    font-size: 30px;
+    border-bottom: 3px solid ;
+}
+
+.processText p{
+    padding: 50px;
+    font-size: 20px;
+}
+
+.processPage:nth-child(1){
+    transform: translateX(-50%) translateZ(600px);
+}
+.processPage:nth-child(2){
+    transform: translateX(-50%) rotateY(72deg) translateZ(600px);
+}
+.processPage:nth-child(3){
+    transform: translateX(-50%) rotateY(144deg) translateZ(600px);
+}
+.processPage:nth-child(4){
+    transform: translateX(-50%) rotateY(-144deg) translateZ(600px);
+}
+.processPage:nth-child(5){
+    transform: translateX(-50%) rotateY(-72deg) translateZ(600px);
+}
+/********* [ process set ] *********/
+
+/********* [ 3 slider ] *********/
+#teamIntroZone{
+    overflow: hidden;
+    display: flex;
+}
+
+#sliderZone{
+    float: left;
+}
+
+.sliderPart{
+    overflow: hidden;
+}
+
+.sliderLine{    
+    position: relative;
+    display: flex;
+    
+    overflow: hidden;
+}
+
+.sliderImg{
+    position: absolute;
+}
+
+.sliderLine:nth-child(2)>.sliderImg{
+    z-index: -1;
+}
+
+.sliderLine:nth-child(3)>.sliderImg{
+    z-index: -2;
+}
+
+.teamIntroTextZone{
+    width: 100%;
+    text-align: right;
+}
+
+.teamIntroText1{
+    margin-top: 70px;
+    font-size: 60px;
+}
+
+.teamIntroText2{
+    font-size: 40px;
+}
+
+.teamIntroText3{
+    font-size: 20px;
+}
+
+.teamIntroZoneLine{
+    margin: 50px 0 50px auto;
+    width: 90%;
+    height: 1px;
+    background-color: black;
+}
+/********* [ 3 slider ] *********/

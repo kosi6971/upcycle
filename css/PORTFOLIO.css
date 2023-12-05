@@ -1,0 +1,217 @@
+@charset "utf-8";
+
+#furnitureZone{
+    margin: 50px 0;
+}
+
+.furnitureScreenZone{
+    overflow: hidden;
+}
+
+.furnitureInScreenZone{
+    position: relative;
+    width: 90%;
+    height: 800px;
+    margin: 0 auto;
+}
+
+.furnitureScreen{
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    top: 100%;
+    transition: 1s;
+    opacity: 0;
+}
+
+.furnitureScreen:first-child{
+    top: 0;
+    opacity: 1;
+}
+
+.furnitureScreen:first-child>h1{
+    margin-top: 100px;
+    font-size: 70px;
+    
+}
+
+.furnitureScreen:first-child>h2{
+    font-size: 15px;
+    margin: 10px 0 40px 0;
+    color: rgb(150, 150, 150);
+}
+
+.furnitureScreen:first-child>p{
+    font-size: 17px;
+    line-height: 35px;
+}
+
+.furnitureScreen:nth-child(2)>img{
+    width: 400px;
+    position: absolute;
+    transform: translateX(-100%);
+}
+
+.furnitureScreen:nth-child(2)>img:nth-child(1){
+    top: 60px;
+    left: 1230px;
+}
+
+.furnitureScreen:nth-child(2)>img:nth-child(2){
+    top: 30px;
+    left: 580px;
+}
+
+.furnitureScreen:nth-child(2)>img:nth-child(3){
+    top: 445px;
+    left: 555px;
+}
+
+.furnitureScreen:nth-child(2)>img:nth-child(4){
+    top: 445px;
+    left: 1285px;
+}
+
+.furnitureScreen:nth-child(2)>div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    line-height: 290px;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(150, 150, 150);
+    background-color: rgb(230, 230, 230);
+}
+
+.furnitureScreen:nth-child(3)>img{
+    height: 100%;
+}
+
+.furnitureScreen:nth-child(4)>img{
+    width: 450px;
+    position: absolute;
+    transform: translateX(-100%);
+}
+
+.furnitureScreen:nth-child(4)>img:nth-child(1){
+    top: 410px;
+}
+
+.furnitureScreen:nth-child(4)>img:nth-child(2){
+    top: 50px;
+}
+
+.furnitureScreen:nth-child(4)>img:nth-child(3){
+    top: 410px;
+    left: 1210px;
+}
+
+.furnitureScreen:nth-child(4)>div{
+    width: 450px;
+    position: absolute;
+    transform: translateX(-100%);
+    top: 50px;
+    left: 1210px;
+}
+
+.furnitureScreen:nth-child(4)>div>h1{
+    margin-top: 70px;
+    font-size: 40px;
+    color: rgb(150, 150, 150);
+}
+
+.furnitureScreen:nth-child(4)>div>h2{
+    margin: 20px 0 10px 0;
+    font-size: 15px;
+    color: rgb(150, 150, 150);
+}
+
+.furnitureScreen:nth-child(4)>div>h3{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.furnitureScreen:last-child>img{
+    /* 장난 */
+    width: 100%;
+}
+
+
+.furnitureBtnZone{
+    display: flex;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.furnitureBtnZone>button{
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0);
+    transition: 0.3s;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 0 1px;
+    font-size: 25px;
+}
+
+
+/********* [ 가구 이미지 소개 ] *********/
+#furniturIntroduction{
+    transition: 0.4s;
+    display: flex;
+    margin: 70px 0 300px 0;
+}
+
+.furniturIntroductionBtnZone{
+    margin-left: 50px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.furniturIntroductionBtn{
+    position: relative;
+    width: 100px;
+    height: 50px;
+    margin: 20px;
+    cursor: pointer;
+    background-color: gray;
+}
+
+.furniturIntroductionBtnZone>h1{
+    font-family: 'Inter';
+    font-size: 40px;
+    text-align: left;
+}
+
+.furniturIntroductionLine{
+    width: 5px;
+    height: 700px;
+    margin: auto 100px auto 0;
+    background-color: rgb(136, 136, 136);
+    border-radius: 50%;
+}
+
+.furniturIntroductionScreenZone{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.furniturIntroductionScreen{
+    position: absolute;
+    transform: translateX(-50%);
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+.furniturIntroductionScreenZone>.furniturIntroductionScreen:nth-child(1){
+    left: 50%;
+    opacity: 1;
+}
+/********* [ 가구 이미지 소개 ] *********/
