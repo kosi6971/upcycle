@@ -30,10 +30,38 @@ main>h1{
 
 .contentBody{
     transition: 1s;
-    height: 50px;
+    height: 51px;
+    overflow: hidden;
 }
 
 .contentBody:hover{
-    height: 400px;
+    height: 1600px;
     border-bottom: 1px solid #CDD9C5;
+}
+
+.userAnswer>div>h1{
+    font-size: 40px;
+    text-align: left;
+    margin: 10px 50px;
+}
+
+.userAnswer>div:nth-child(2)>h1, .userAnswer>div:nth-child(4)>h1{
+    text-align: right;
+}
+
+.userAnswer>div>div{
+    display: flex;
+}
+
+.userAnswer>div>div>img{
+    width: 300px;
+}
+
+.userAnswer>div>div>p{
+    width: 100%;
+}
+
+.userAnswer>div>div>p, .userAnswer>div>div>img{
+    border: 2px solid #6D7A71;
+    margin: 0 50px;
 }

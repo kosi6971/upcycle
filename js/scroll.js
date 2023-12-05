@@ -26,6 +26,9 @@ $(()=>{
         if(on){
             sctop = $(this).scrollTop(); // 스크롤 위치값(this는 window)
 
+            if(sctop >= 1000) $(".subMenu li").css("background-color", "white");
+            else $(".subMenu li").css("background-color", "rgb(0 0 0 / 0%)");
+
             cycleIntroEventStart = $("#cycleIntroZone").offset().top - ($("#cycleIntroZone").height()/2);
             cycleEventStart = $("#cycleZone").position().top - ($("#cycleZone").height()/2)
             projectIntroEventStart = $("#projectIntroZone").position().top - ($("#projectIntroZone").height()/2)

@@ -70,7 +70,7 @@ $(()=>{
                 break;
 
             case 2:
-                $("html, body").animate({scrollTop :  teamEventStart.top-100}, 1000)
+                $("html, body").animate({scrollTop :  teamEventStart.top-250}, 1000)
                 break;
         
             default:
