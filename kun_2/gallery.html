@@ -5,48 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcycling Introduction</title>
-    <link rel="stylesheet" href="./gallery.css">
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/intro.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <style>
+        
+    </style>
 </head>
 
 <body>
-    <header class="headBody subHead">
-        <div class="inBox">
-            <a href="../html/intro.html">
-                <img src="../img/logo_2.png" alt="로고">
-                <h1>HEYDAY</h1>
-            </a>
-            <ul id="headLine">
-                <li class="headMenuBtn">
-                    <div><a href="../html/intro.html">HOME</a></div>
-                </li>
-                <li class="headMenuBtn">
-                    <div>PRODUCT</div>
-                    <ul class="subMenu subMenu2">
-                        <li><a href="../html/PORTFOLIO.html">PORTFOLIO</a></li>
-                        <li><a href="../html/FURNITURE.html">FURNITURE</a></li>
-                    </ul>
-                </li>
-                <li class="headMenuBtn">
-                    <div><a href="../kun_2/gallery.html">GALLERY</a></div>
-                </li>
-                <li class="headMenuBtn">
-                    <div>CONTACT</div>
-                    <ul class="subMenu subMenu3">
-                        <li><a href="../html/Q&A.html">Q&A</a></li>
-                    </ul>
-                </li>
-                <li class="headMenuBtn">
-                    <div>FOLLOW US</div>
-                    <ul class="subMenu subMenu4">
-                        <li><a href="#mainId" target="_blank">INSTAGRAM</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <main>
+    
+    
+    <section>
         <p class="galleryTitle">Welcome to the Gallery World</p>
         <p class="galleryContents">Embark on a visual journey with us as we showcase the moments captured in time.</p>
         <p class="galleryContents">Each photograph tells a unique story, weaving together the threads of our shared experiences and memories.</p>
@@ -54,219 +27,287 @@
         
         <div id="categoryList">
             <a id="materialMuseum" href="#" onclick="showCategory('materialMuseum')" class="active">
-                <img src="../kun_2/img/materialMuseum/materialMuseum (1).jpg" alt="Material Museum">
+                <img src="../img/materialMuseum.png" alt="Material Museum">
                 <span class="category-description">Explore Material Museum</span>
                 Material Museum
             </a>
         
             <a id="designSelection" href="#" onclick="showCategory('designSelection')" class="active">
-                <img src="../kun_2/img/designSelection/designSelection (1).jpg" alt="Design Selection Process" width="100" height="100">
+                <img src="../img/designSelection.png" alt="Design Selection Process" width="100" height="100">
                 <span class="category-description">Discover Design Selection Process</span>
                 Design Selection Process
             </a>
         
             <a id="productionProcess" href="#" onclick="showCategory('productionProcess')" class="active">
-                <img src="../kun_2/img/productionProcess/productionProcess (1).jpg" alt="Production Process" width="100" height="100">
+                <img src="../img/productionProcess.png" alt="Production Process" width="100" height="100">
                 <span class="category-description">Learn about Production Process</span>
                 Production Process
             </a>
         
             <a id="video" href="#" onclick="showCategory('video')" class="active">
-                <img src="../kun_2/img/productionProcess/productionProcess (5).jpg" alt="Video" width="100" height="100">
+                <img src="../img/video.png" alt="Video" width="100" height="100">
                 <span class="category-description">Watch Videos</span>
                 Video
             </a>
         </div>
         <div class="gallery" id="imageGallery"></div>
-    </main>
+    </section>
 
-    <!-- 모달 -->
-    <div id="myModal" class="modal">
-        <span class="arrow arrow-left" onclick="changeImage(-1)">&lt;</span>
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <img id="modalImg" class="modal-img" src="" alt="Modal Image">
-        </div>
-        <span class="arrow arrow-right" onclick="changeImage(1)">&gt;</span>
-    </div>
 
     <!-- 스크립트 부분 수정 -->
     <script>
-        // 이미지 파일 이름을 배열로 저장
-        var materialMuseum = [];
-        for (var i = 1; i <= 24; i++) {
-            materialMuseum.push('materialMuseum (' + i + ').jpg');
+    // 이미지 파일 이름을 배열로 저장
+    var materialMuseum = [];
+    for (var i = 1; i <= 24; i++) {
+        materialMuseum.push('materialMuseum (' + i + ').jpg');
+    }
+
+    var designSelection = [];
+    for (var i = 1; i <= 10; i++) {
+        designSelection.push('designSelection (' + i + ').jpg');
+    }
+
+    var productionProcess = [];
+    for (var i = 1; i <= 61; i++) {
+        productionProcess.push('productionProcess (' + i + ').jpg');
+    }
+
+    var video = [];
+    for (var i = 1; i <= 4; i++) {
+        video.push('video (' + i + ').mp4');
+    }
+
+    var currentImageIndex = 0;
+    var categoryImages = getCategoryImages(category);
+    var category;
+    // 이미지 변경 함수 수정
+    function changeImage(step) {
+        currentImageIndex += step;
+        if (currentImageIndex < 0) {
+            currentImageIndex = categoryImages.length - 1;
+        } else if (currentImageIndex >= categoryImages.length) {
+            currentImageIndex = 0;
         }
+        updateModalImage();
+    }
 
-        var designSelection = [];
-        for (var i = 1; i <= 9; i++) {
-            designSelection.push('designSelection (' + i + ').jpg');
-        }
+    // 모달의 이미지 업데이트
+    function updateModalImage() {
+        var modalImg = document.getElementById('modalImg');
+        modalImg.src = '../img/' + currentCategory + '/' + categoryImages[currentImageIndex];
+    }
 
-        var productionProcess = [];
-        for (var i = 1; i <= 61; i++) {
-            productionProcess.push('productionProcess (' + i + ').jpg');
-        }
+    var categoryListTransformed = false;
 
-        var video = [];
-        for (var i = 1; i <= 4; i++) {
-            video.push('video (' + i + ').mp4');
-        }
-
-        var currentImageIndex = 0;
-        var categoryImages = getCategoryImages(category); 
-
-        // 이미지 변경 함수 수정
-        function changeImage(step) {
-            currentImageIndex += step;
-            if (currentImageIndex < 0) {
-                currentImageIndex = categoryImages.length - 1;
-            } else if (currentImageIndex >= categoryImages.length) {
-                currentImageIndex = 0;
-            }
-            updateModalImage();
-        }
-
-        // 모달의 이미지 업데이트
-        function updateModalImage() {
-            var modalImg = document.getElementById('modalImg');
-            modalImg.src = '../kun_2/img/' + currentCategory + '/' + categoryImages[currentImageIndex];
-        }
-
-        var categoryListTransformed = false;
-
-        // 카테고리 클릭 시 해당 카테고리의 이미지를 표시
-        function showCategory(category) {
-            var categoryLinks = document.querySelectorAll('#categoryList a');
-            categoryLinks.forEach(function(link) {
-                link.classList.remove('active');
-            });
-            document.getElementById(category).classList.add('active');
-            document.getElementById('categoryList').addEventListener('click', function () {
-                // galleryTitle, galleryContents 숨기기
-                document.querySelector('.galleryTitle').classList.add('hidden');
-                document.querySelectorAll('.galleryContents').forEach(function (element) {
-                    element.classList.add('hidden');
-                });
-
-                // categoryList 움직이기// 상황에 맞게 조절
-                document.getElementById('categoryList').style.opacity = '1'; // 투명도를 0으로 설정
-                if (!categoryListTransformed) {
-                    document.getElementById('categoryList').style.transform = 'translateY(-150px)';
-                    categoryListTransformed = true;}
-                // 갤러리 보이도록 스타일 변경
-                document.getElementById('imageGallery').style.transform = 'translateY(0)';
-                document.getElementById('imageGallery').style.opacity = '1'; // 투명도를 1로 설정
-
-                // 추가로 필요한 동작 수행 (예: showCategory 함수 호출)
-            });
-
-            // 나타나는 효과를 위한 setTimeout 사용
-            setTimeout(function () {
-                currentCategory = category;
-                categoryImages = getCategoryImages(category);
-                // 갤러리 동적으로 추가
-                var modalGallery = document.getElementById('imageGallery');
-                modalGallery.innerHTML = ''; // 기존 갤러리 내용 초기화
-
-                categoryImages.forEach(function (file, index) {
-                    var galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
-
-                    if (file.endsWith('.mp4')) {
-                        var video = document.createElement('video');
-                        video.src = '../kun_2/img/' + category + '/' + file;
-                        video.alt = category + ' Video ' + (index + 1);
-                        video.controls = true; // 비디오 컨트롤러 표시
-                        galleryItem.appendChild(video);
-                    } else {
-                        galleryItem.onclick = function () {
-                            openModal(index);
-                        };
-                        var image = document.createElement('img');
-                        image.src = '../kun_2/img/' + category + '/' + file;
-                        image.alt = category + ' Image ' + (index + 1);
-                        galleryItem.appendChild(image);
-                    }
-
-                    modalGallery.appendChild(galleryItem);
-                });
-                document.getElementById('categoryList').style.transform = 'translateY(10px)';
-                currentImageIndex = 0; // 모달의 현재 이미지 인덱스 초기화
-                updateModalImage();
-            }, 500); // 0.5초 후에 실행 (transition 시간과 맞춤)
-        }
-
-        // transitionend 이벤트를 이용하여 갤러리가 나타난 후에 실행될 함수 추가
-        document.getElementById('imageGallery').addEventListener('transitionend', function () {
-            // 나타난 후에 transform 및 opacity 초기화
-            this.style.transform = '';
-            this.style.opacity = '';
+    // 카테고리 클릭 시 해당 카테고리의 이미지를 표시
+    function showCategory(category) {
+        var categoryLinks = document.querySelectorAll('#categoryList a');
+        categoryLinks.forEach(function (link) {
+            link.classList.remove('active');
         });
-        // 카테고리에 따라 이미지 배열 반환
-        function getCategoryImages(category) {
-            switch (category) {
-                case 'materialMuseum':
-                    return materialMuseum;
-                case 'designSelection':
-                    return designSelection;
-                case 'productionProcess':
-                    return productionProcess;
-                case 'video':
-                    return video;
-                default:
-                    return [];
+        document.getElementById(category).classList.add('active');
+        document.getElementById('categoryList').addEventListener('click', function () {
+            // galleryTitle, galleryContents 숨기기
+            document.querySelector('.galleryTitle').classList.add('hidden');
+            document.querySelectorAll('.galleryContents').forEach(function (element) {
+                element.classList.add('hidden');
+            });
+            document.querySelector('.galleryTitle').classList.add('hidden');
+            document.querySelectorAll('.galleryContents').forEach(function (element) {
+                element.classList.add('hidden');
+            });
+            // categoryList 움직이기// 상황에 맞게 조절
+            document.getElementById('categoryList').style.opacity = '1'; // 투명도를 0으로 설정
+            if (!categoryListTransformed) {
+                document.getElementById('categoryList').style.transform = 'translateY(-150px)';
+                categoryListTransformed = true;
             }
+            // 갤러리 보이도록 스타일 변경
+            document.getElementById('imageGallery').style.transform = 'translateY(0)';
+            document.getElementById('imageGallery').style.opacity = '1'; // 투명도를 1로 설정
+
+            // 추가로 필요한 동작 수행 (예: showCategory 함수 호출)
+        });
+
+        // 나타나는 효과를 위한 setTimeout 사용
+        setTimeout(function () {
+            currentCategory = category;
+            document.getElementById('categoryList').style.transform = 'translateY(0)';
+            categoryImages = getCategoryImages(category);
+            // 갤러리 동적으로 추가
+            var modalGallery = document.getElementById('imageGallery');
+            modalGallery.innerHTML = ''; // 기존 갤러리 내용 초기화
+
+            var imageCount = categoryImages.length;
+            var loadedImages = 0;
+            function fadeInImage(imageElement, delay) {
+                var opacity = 0;
+                imageElement.style.opacity = opacity;
+
+                var startTime;
+                function animate(currentTime) {
+                    if (!startTime) startTime = currentTime;
+                    var elapsed = currentTime - startTime;
+                    opacity = elapsed / 1000; // 1000ms 동안 페이드인
+                    imageElement.style.opacity = Math.min(opacity, 1);
+
+                    if (opacity < 1) {
+                        requestAnimationFrame(animate);
+                    }
+                }
+
+                setTimeout(function () {
+                    requestAnimationFrame(animate);
+                }, delay);
+            }
+
+            categoryImages.forEach(function (file, index) {
+                var galleryItem = document.createElement('a');
+                galleryItem.className = 'gallery-item';
+                galleryItem.href = '../img/' + category + '/' + file;
+                galleryItem.setAttribute('data-fancybox', 'gallery'); // Fancybox에 필요한 속성 추가
+                galleryItem.setAttribute('data-thumb', '../img/' + category + '/' + file);
+
+                if (file.endsWith('.mp4')) {
+                    // 동영상의 경우 썸네일 이미지 사용
+                    var thumbnail = document.createElement('img');
+                    thumbnail.src = '../img/' + category + '/' + file.replace('.mp4', '.png'); // 실제 썸네일 이미지로 대체
+                    thumbnail.alt = category + ' Video ' + (index + 1);
+                    fadeInImage(thumbnail, index * 100);
+                    galleryItem.appendChild(thumbnail);
+                } else {
+                    var image = document.createElement('img');
+                    image.src = '../img/' + category + '/' + file;
+                    image.alt = category + ' Image ' + (index + 1);
+                    image.onload = function () {
+                        loadedImages++;
+                        if (loadedImages === imageCount) {
+                            // 모든 이미지가 로드된 후에 Masonry 초기화
+                            initializeMasonry();        
+                        }
+                    };
+                    fadeInImage(image, index * 100);
+                    galleryItem.appendChild(image);
+                }
+
+                modalGallery.appendChild(galleryItem);
+            });
+
+            // Masonry 초기화 함수
+            function initializeMasonry() {
+                // Masonry 초기화
+                var masonry = new Masonry(modalGallery, {
+                    itemSelector: '.gallery-item',
+                    columnWidth: '.gallery-item',
+                    gutter: 20, // 간격을 필요에 따라 조절
+                    fitWidth: true, // 플루이드 레이아웃을 사용하려면 true로 설정
+                });
+
+                // 이미지가 로드된 후에 Masonry 초기화
+                imagesLoaded(modalGallery, function () {
+                    masonry.layout();
+                });
+            }
+            
+        }, 500); // 0.5초 후에 실행 (트랜지션 시간과 맞춤)
+    }
+    // 카테고리 숨기기 함수
+    function hideCategory() {
+        // galleryTitle, galleryContents 보이기
+        var galleryTitle = document.querySelector('.galleryTitle');
+        var galleryContents = document.querySelectorAll('.galleryContents');
+        var imageGallery = document.getElementById('imageGallery');
+
+        // galleryTitle, galleryContents 보이기
+        galleryTitle.classList.remove('hidden');
+        galleryContents.forEach(function (element) {
+            element.classList.remove('hidden');
+        });
+
+        // 갤러리 숨기기
+        document.getElementById('imageGallery').style.opacity = '0'; // 투명도를 0으로 설정
+        document.getElementById('imageGallery').style.transform = 'translateY(150px)';
+        categoryListTransformed = false;
+        // 추가로 필요한 동작 수행
+    }
+    // 초기 상태 저장
+    var initialCategory = 'materialMuseum';
+    var scrolled = false;
+    // 스크롤 이벤트 핸들러
+    function handleScroll() {
+        // 현재 스크롤 위치 가져오기
+        var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        console.log('Scrolling...');
+        // 일정 스크롤 위치에서 showCategory 또는 hideCategory 호출
+        if (scrollPosition > 50 && !scrolled) {
+            console.log('확인문구')
+            document.querySelector('.galleryTitle').classList.add('hidden');
+            document.querySelectorAll('.galleryContents').forEach(function (element) {
+                element.classList.add('hidden');
+            });
+            document.getElementById('imageGallery').style.opacity = '1';
+            document.getElementById('imageGallery').style.transform = 'translateY(0)';
+            scrolled = true;
+        } else if (scrollPosition <= 50 && scrolled) {
+            console.log('확인문구')
+            hideCategory();
+            scrolled = false;
         }
+    }
 
-        // 모달 열기 함수 수정
-        function openModal(index) {
-            var modal = document.getElementById('myModal');
-            modal.style.display = 'block';
-            currentImageIndex = index;
-            updateModalImage();
+    document.addEventListener('DOMContentLoaded', function () {
+        // 스크롤 이벤트에 핸들러 연결
+        window.addEventListener('scroll', handleScroll);
+        // 초기에 hideCategory 호출하여 초기 상태 설정
+        hideCategory();
+    });
+    // 카테고리에 따라 이미지 배열 반환
+    function getCategoryImages(category) {
+        switch (category) {
+            case 'materialMuseum':
+                return materialMuseum;
+            case 'designSelection':
+                return designSelection;
+            case 'productionProcess':
+                return productionProcess;
+            case 'video':
+                return video;
+            default:
+                return [];
         }
+    }
 
-        // 모달 닫기 함수 수정
-        function closeModal() {
-            var modal = document.getElementById('myModal');
-            modal.style.display = 'none';
-        }
-    </script>
+    // 모달 열기 함수 수정
+    function openModal(index) {
+        // Use Fancybox to open the modal
+        $("[data-fancybox='gallery']").eq(index).trigger("click");
+    }
 
-
-    <!-- footer 구역 -->
-    <footer id="foot" class="mgb">
-        <div class="inBox">
-            <div class="footLogo">
-                <img src="../img/logo_2.png" alt="logo">
-                <h1>HEYDAY</h1>
-                <p>to save the Earth</p>
-            </div>
-
-            <div class="footData">
-                <p>
-                    상호명 : HEYDAY<br>
-                    TEL 02.490.7300<br>
-                    주소 : 02192 서울특별시 중랑구 용마산로 90길 28
-                </p>
-                <h1>2023. HEYDAY Co. all rights reserved</h1>
-            </div>
-
-            <div class="footLine"></div>
-
-            <div class="sns">
-                <div class="instar">
-                    <a href="#">
-                        <img src="../img/instarIcon.png" alt="instarIcon">
-                        <img src="../img/instarText.png" alt="instarText">
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </footer>
-    <!-- footer 구역 -->
+    // 모달 닫기 함수 수정
+    function closeModal() {
+        var modal = document.getElementById('myModal');
+        modal.style.display = 'none';
+    }
+    $(document).ready(function () {
+        $('[data-fancybox="gallery"]').fancybox({
+            // Add Fancybox options here if needed
+            loop: true,
+            transitionEffect: 'slide',
+            buttons: [
+                "slideShow",
+                "thumbs",
+                "zoom",
+                "fullScreen",
+                "close"
+            ],
+            thumbs: {
+                autoStart: true, // Thumbnails를 자동으로 시작
+                axis: 'y', // Thumbnails의 방향 (x 또는 y)
+            },
+            
+        });
+    });
+</script>
 
 </body>
 
