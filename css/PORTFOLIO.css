@@ -173,17 +173,27 @@
 
 .furniturIntroductionBtn{
     position: relative;
-    width: 100px;
+    width: 120px;
     height: 50px;
     margin: 20px;
     cursor: pointer;
-    background-color: gray;
+    background-color: white;
+    border: 1px solid #CDD9C5;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.furniturIntroductionBtn:hover{
+    color: #CDD9C5;
+    background-color: #6D7A71;
 }
 
 .furniturIntroductionBtnZone>h1{
     font-family: 'Inter';
     font-size: 40px;
     text-align: left;
+    margin-bottom: 50px;
 }
 
 .furniturIntroductionLine{
@@ -213,5 +223,15 @@
 .furniturIntroductionScreenZone>.furniturIntroductionScreen:nth-child(1){
     left: 50%;
     opacity: 1;
+}
+
+.furniturIntroductionScreen>img{
+    width: 28%;
+    display: inline-block;
+    margin: 120px 20px;
+}
+
+.furniturIntroductionScreen:nth-of-type(4)>img:last-child{
+    height: 60%;
 }
 /********* [ 가구 이미지 소개 ] *********/
