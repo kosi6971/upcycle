@@ -4,6 +4,10 @@ main{
     padding-top: 120px;
 }
 
+#furnitureIntroZone{
+    margin: 300px 0;
+}
+
 .furnitureIntroImgZone{
     display: inline-block;
 }
@@ -266,3 +270,24 @@ main{
     font-size: 20px;
 }
 /********* [ 재료 소개 ] *********/
+
+/********* [ 컨셉 사진 ] *********/
+#consPZone{
+    margin: 300px 0;
+
+}
+
+#consPZone>div{
+    display: flex;
+    justify-content: center;
+    margin: 100px 0;
+}
+
+#consPZone>div>img{
+    width: 30%;
+}
+
+#consPZone>div>div{
+    width: 50%;
+}
+/********* [ 컨셉 사진 ] *********/

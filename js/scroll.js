@@ -57,8 +57,7 @@ function cycleZoneEvent(){
     const cycleZone = $("#cycleZone")
 
     cycleZone.css({
-        "opacity" : "1",
-        "padding-top" : "0"
+        "opacity" : "1"
     })
 }
 // **************사이클 이벤트*************
@@ -76,8 +75,7 @@ function cycleEvent(){
     const projectIntro = $("#projectIntroZone")
 
     projectIntro.css({
-        "opacity" : "1",
-        "padding-top" : "0"
+        "opacity" : "1"
     })
 }
 // **************업사이클 이벤트*************
