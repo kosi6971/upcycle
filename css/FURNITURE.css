@@ -250,6 +250,7 @@ main{
     position: absolute;
     opacity: 0;
     transition: 1s;
+    width: 455px;
 }
 
 .materialScreen:nth-of-type(1){
@@ -274,20 +275,19 @@ main{
 /********* [ 컨셉 사진 ] *********/
 #consPZone{
     margin: 300px 0;
-
+    display: flex;
+    justify-content: center;
 }
 
 #consPZone>div{
-    display: flex;
-    justify-content: center;
-    margin: 100px 0;
+    margin: 30px;
 }
 
 #consPZone>div>img{
-    width: 30%;
+    width: 500px;
 }
 
-#consPZone>div>div{
-    width: 50%;
+#consPZone>div>p{
+    height: 100px;
 }
 /********* [ 컨셉 사진 ] *********/
