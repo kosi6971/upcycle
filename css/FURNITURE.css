@@ -274,7 +274,7 @@ main{
 
 /********* [ 컨셉 사진 ] *********/
 #consPZone{
-    margin: 300px 0;
+    margin-bottom: 300px;
     display: flex;
     justify-content: center;
 }
