@@ -288,6 +288,11 @@ main{
 }
 
 #consPZone>div>p{
-    height: 100px;
+    font-size: 25px;
+    margin: 20px 0;
+}
+
+#consPZone>div:last-of-type>p{
+    font-weight: bold;
 }
 /********* [ 컨셉 사진 ] *********/
