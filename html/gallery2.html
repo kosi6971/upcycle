@@ -54,10 +54,12 @@
     </header>
     
     <section>
-        <p class="galleryTitle">Welcome to the Gallery World</p>
-        <p class="galleryContents">Embark on a visual journey with us as we showcase the moments captured in time.</p>
-        <p class="galleryContents">Each photograph tells a unique story, weaving together the threads of our shared experiences and memories.</p>
-        <p class="galleryContents">Explore the artistry, emotions, and narratives behind each image, and join us in celebrating the beauty of life through the lens.</p>
+        <div>
+            <p class="galleryTitle">Welcome to the Gallery World</p>
+            <p class="galleryContents">Embark on a visual journey with us as we showcase the moments captured in time.</p>
+            <p class="galleryContents">Each photograph tells a unique story, weaving together the threads of our shared experiences and memories.</p>
+            <p class="galleryContents">Explore the artistry, emotions, and narratives behind each image, and join us in celebrating the beauty of life through the lens.</p>
+        </div>
         
         <div id="categoryList">
             <a id="materialMuseum" href="#" onclick="showCategory('materialMuseum')" class="active">
@@ -370,9 +372,11 @@
             item.addEventListener('mouseenter', function () {
                 var description = item.querySelector('.image-description');
                 var imageElement = item.querySelector('img');
+                var divElement = item.querySelector('div');
 
                 if (imageElement.style.opacity !== '1') {
                     imageElement.style.opacity = '1';
+                    divElement.style.opacity = '1';
                 }
                 description.style.opacity = '1';
             });
@@ -380,9 +384,11 @@
             item.addEventListener('mouseleave', function () {
                 var description = item.querySelector('.image-description');
                 var imageElement = item.querySelector('img');
+                var divElement = item.querySelector('div');
 
                 if (imageElement.style.opacity !== '1') {
                     imageElement.style.opacity = '1';
+                    divElement.style.opacity = '1';
                 }
                 setTimeout(function () {
                     description.style.opacity = '1';

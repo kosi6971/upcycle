@@ -154,7 +154,9 @@ section {
     padding: 10px;
     font-size: 14px;
     text-align: center;
-    opacity: 0; /* 초기에 투명 상태로 설정 */
+    opacity: 1; /* 초기에 투명 상태로 설정 */
+    transition: transform 0.5s ease-in-out;
+    z-index: 1;
 }
 
 /* 호버 상태에서 이미지 설명 표시 */
