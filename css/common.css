@@ -207,17 +207,24 @@ header img{
     justify-content: space-between;
 }
 
+.subHead>.inBox>a{
+    margin: 20px 0;
+}
+
 .subHead #headLine{
     justify-content: flex-end;
-    height: 80px;
 }
 .subHead #headLine>.headMenuBtn{
-    width: 276px;
+    width: 275px;
     height: 100%;
 }
 
 .subHead #headLine>.headMenuBtn div{
-    font-size: 20px;
+    font-size: 28px;
+}
+
+.subHead #headLine>.headMenuBtn:hover div{
+    font-size: 25px;
 }
 
 .subHead>.inBox>a>img{
@@ -249,4 +256,11 @@ header img{
     background-color: white;
 }
 
+.subHead .subMenu{
+    font-size: 23px;
+}
+
+.subHead .subMenu li:hover{
+    font-size: 20px;
+}
 /*********** headerSub ***********/

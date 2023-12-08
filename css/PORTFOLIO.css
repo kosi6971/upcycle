@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 #furnitureZone{
-    margin: 50px 0;
+    margin: 200px 0;
     display: flex;
 }
 
@@ -9,20 +9,19 @@
     overflow: hidden;
     display: inline-block;
     width: 84%;
-    margin-top: 50px;
 }
 
 .furnitureInScreenZone{
     position: relative;
     width: 100%;
-    height: 800px;
+    height: 650px;
     margin: 0 auto;
 }
 
 .furnitureScreen{
     position: absolute;
     width: 100%;
-    height: 800px;
+    height: 100%;
     top: 100%;
     transition: 1s;
     opacity: 0;
@@ -33,13 +32,16 @@
     opacity: 1;
 }
 
-.furnitureScreen:first-child>h1{
+.furnitureScreenConcept{
     margin-top: 100px;
+}
+
+.furnitureScreenConcept>h1{
     font-size: 70px;
     
 }
 
-.furnitureScreen:first-child>p{
+.furnitureScreenConcept>p{
     font-size: 17px;
     line-height: 35px;
 }
@@ -134,15 +136,15 @@
 }
 
 .furnitureScreen:last-child>img{
-    /* 장난 */
     width: 100%;
 }
 
 
 .furnitureBtnZone{
+    position: relative;
     display: inline-flex;
     flex-direction: column;
-    margin: auto 0;
+    justify-content: space-around;
 }
 
 .furnitureBtnZone>button{
@@ -151,29 +153,27 @@
     transition: 0.3s;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    margin: 40px 1px;
+    margin: 0 1px;
     font-size: 25px;
 }
 
-
-/********* [ 가구 이미지 소개 ] *********/
-#furniturIntroduction{
-    transition: 0.4s;
-    display: flex;
-    margin: 70px 0 300px 0;
-}
-
 .furniturIntroductionBtnZone{
-    margin-left: 50px;
-    display: inline-flex;
+    height: 0;
+    position: absolute;
+    left: 110%;
+    top: 94%;
+    display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 3;
+    transition: .5s;
+    overflow: hidden;
 }
 
 .furniturIntroductionBtn{
     position: relative;
     width: 120px;
     height: 50px;
-    margin: 20px;
     cursor: pointer;
     background-color: white;
     border: 1px solid #CDD9C5;
@@ -186,25 +186,17 @@
     color: #CDD9C5;
     background-color: #6D7A71;
 }
-
-.furniturIntroductionBtnZone>h1{
-    font-family: 'Inter';
-    font-size: 40px;
-    text-align: left;
-    margin-bottom: 50px;
-}
-
-.furniturIntroductionLine{
-    width: 5px;
-    height: 700px;
-    margin: auto 100px auto 0;
-    background-color: rgb(136, 136, 136);
-    border-radius: 50%;
+/********* [ 가구 이미지 소개 ] *********/
+#furniturIntroduction{
+    transition: 0.4s;
+    display: flex;
+    height: 100%;
 }
 
 .furniturIntroductionScreenZone{
     position: relative;
-    width: 100%;
+    margin-left: 10%;
+    width: 80%;
     overflow: hidden;
 }
 

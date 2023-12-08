@@ -8,11 +8,29 @@ $(()=>{
         let clickBtnNum = $(this).index();
         let clickScreen = screen.eq(clickBtnNum)
         
+        let furniturIntroBtnZone = $(".furniturIntroductionBtnZone")
+        if(clickBtnNum == 4){
+            
+
+            furniturIntroBtnZone.css({
+                "height": "100%",
+                "top": "0"
+            })
+
+        }
+        else{
+            furniturIntroBtnZone.css({
+                "height": "0",
+                "top": "94%"
+            })
+        }
+
+
         $(this).css({
             "color": "red",
             "border-top": "1px solid red",
             "border-bottom": "1px solid red"
-        }).siblings().css({
+        }).siblings("button").css({
             "color": "black",
             "border-top": "1px solid black",
             "border-bottom": "1px solid black",
