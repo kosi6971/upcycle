@@ -214,8 +214,8 @@ main{
 .materialPoint{
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: #CDD9C5;
     border: 1px solid #6D7A71;
