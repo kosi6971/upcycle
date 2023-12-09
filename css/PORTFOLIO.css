@@ -166,7 +166,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     z-index: 3;
-    transition: .5s;
+    transition: .7s;
     overflow: hidden;
 }
 

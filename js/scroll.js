@@ -17,11 +17,6 @@ $(()=>{
         }, 1000)
     });
 
-    let cycleIntroEventStart;
-    let cycleEventStart;
-    let projectIntroEventStart;
-    let teamIntroEventStart;
-
     $(window).scroll(function(){
         if(on){
             sctop = $(this).scrollTop(); // 스크롤 위치값(this는 window)
@@ -29,10 +24,11 @@ $(()=>{
             if(sctop >= 1000) $(".subMenu li").css("background-color", "white");
             else $(".subMenu li").css("background-color", "rgb(0 0 0 / 0%)");
 
-            cycleIntroEventStart = $("#cycleIntroZone").offset().top - ($("#cycleIntroZone").height()/2);
-            cycleEventStart = $("#cycleZone").position().top - ($("#cycleZone").height()/2)
-            projectIntroEventStart = $("#projectIntroZone").position().top - ($("#projectIntroZone").height()/2)
-            teamIntroEventStart = $("#projectZone").position().top - ($("#projectZone").height()/2)
+            let cycleIntroEventStart = posEvent($("#cycleIntroZone"));
+            let cycleEventStart = posEvent($("#cycleZone"));
+            let projectIntroEventStart = posEvent($("#projectIntroZone"));
+            let teamIntroEventStart = posEvent($("#projectZone"));
+
 
             if(cycleIntroEventStart <= sctop) cycleIntroEvent();
             if(cycleEventStart <= sctop) cycleZoneEvent();
@@ -43,6 +39,11 @@ $(()=>{
     });
 
 });
+
+function posEvent(e) {
+   let pos = e.position().top - (e.height()/2)
+   return pos;
+}
 
 // **************로고 옆 텍스트 이벤트*************
 function teamIntroEvent(){

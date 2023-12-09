@@ -236,7 +236,7 @@
     position: absolute;
     top: 100%;
     opacity: 0;
-    transition: .6s;
+    transition: 1s;
 }
 
 .inScreen{
@@ -422,7 +422,7 @@
 
 /********* [ 프로젝트 소개 ] *********/
 #projectZone{
-    margin: 300px 0;
+    margin-top: 300px;
     display: flex;
     justify-content: space-around;
 }
@@ -464,6 +464,22 @@
 
 .projectText3>span{
     font-size: 40px;
+}
+
+.projectBtn{
+    width: 200px;
+    height: 60px;
+    background-color: #CDD9C5;
+    color: #6D7A71;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+    margin: 50px 0 300px 0;
+}
+
+.projectBtn:hover{
+    background-color: #6D7A71;
+    color: #CDD9C5;
 }
 /********* [ 프로젝트 소개 ] *********/
 

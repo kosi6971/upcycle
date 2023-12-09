@@ -261,4 +261,10 @@ $(()=>{
         $("html, body").animate({scrollTop :  projectMain.top-100}, 1000)
     })
 
+    const projectBtn = $(".projectBtn");
+    projectBtn.on("click", function () {
+        const intro = $(".intro").offset();
+        $("html, body").animate({scrollTop :  intro.top-100}, 1000)
+    })
+
 });

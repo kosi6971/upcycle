@@ -4,7 +4,7 @@ $(()=>{
 
     contentBody.on("click", function () {
         const thisBody = $(this)
-        const thisNotBody = thisBody.siblings()
+        const thisNotBody = thisBody.siblings(".contentBody")
 
         if(thisBody.attr("value") == saveP){
             thisBody.css({

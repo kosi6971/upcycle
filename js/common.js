@@ -66,11 +66,11 @@ $(()=>{
                 break;
             
             case 1:
-                $("html, body").animate({scrollTop :  projectEventStart.top-100}, 1000)
+                $("html, body").animate({scrollTop :  projectEventStart.top}, 1000)
                 break;
 
             case 2:
-                $("html, body").animate({scrollTop :  teamEventStart.top-250}, 1000)
+                $("html, body").animate({scrollTop :  teamEventStart.top-150}, 1000)
                 break;
         
             default:
