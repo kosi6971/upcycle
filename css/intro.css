@@ -664,14 +664,14 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #507b5588;
+    background-color: #507b5540;
     z-index: -1;
     top: 30px;
     left: 30px;
 }
 
 .projectMainBtnZone>div:last-of-type>div{
-    background-color: #c5bb8d4f;
+    background-color: #c5bb8d40;
 }
 
 .projectMainImgZone{
