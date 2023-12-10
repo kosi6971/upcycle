@@ -583,6 +583,7 @@
 
 .cycle>img{
     margin-bottom: 20px;
+    /* filter: drop-shadow(2px 2px 5px #000); */
 }
 
 .cycle1{

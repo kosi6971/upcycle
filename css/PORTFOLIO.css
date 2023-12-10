@@ -173,7 +173,7 @@
 
 .furniturIntroductionBtn{
     position: relative;
-    width: 120px;
+    width: 200px;
     height: 50px;
     cursor: pointer;
     background-color: white;
@@ -192,7 +192,7 @@
 
 .furniturIntroductionScreenZone{
     position: relative;
-    margin-left: 10%;
+    margin-left: 20%;
     width: 80%;
     overflow: hidden;
 }
