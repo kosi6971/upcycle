@@ -24,8 +24,8 @@ $(()=>{
 
     // **************재료 소개*************
     let pointBtn = $(".materialMainImg>button");
-    let stopCnt1 = 0;
-    let stopCnt2 = 0;
+    let stopCnt = 0;
+    let savePoint = 0;
 
     pointBtn.on('click', function(e){
         movePoint(Number(e.target.value))
@@ -33,20 +33,24 @@ $(()=>{
 
     pointBtn.hover(function (e) {
         hoverPoint(Number(e.target.value))
-    }, function (e) {
-        outHoverPoint(Number(e.target.value))
+    }, function () {
     })
 
     function hoverPoint(num) {
-        if(stopCnt1)return;
-        stopCnt1 = 1;
-        setTimeout(()=>{
-            stopCnt1 = 0; // 해제
-        }, 1500);
+        let pointText = $(`.materialMainImg>p:nth-of-type(${num-1})`)
 
+        if(savePoint != num && savePoint != 0)pointText.siblings("p").text("")
+
+        if(stopCnt)return;
+        stopCnt = 1;
+        setTimeout(()=>{
+            stopCnt = 0; // 해제
+        }, 1000);
+
+        pointText.text("")
         
-        var typingBool = false; 
-        var typingIdx=0; 
+        let typingBool = false; 
+        let typingIdx=0; 
 
         // 타이핑될 텍스트를 가져온다
         let typingTxt; 
@@ -70,7 +74,7 @@ $(()=>{
         if(typingBool==false){ 
           // 타이핑이 진행되지 않았다면 
            typingBool=true;     
-           var tyInt = setInterval(typing,100); // 반복동작 
+           let tyInt = setInterval(typing,100); // 반복동작 
         } 
 
         function typing(){ 
@@ -83,25 +87,9 @@ $(()=>{
              //끝나면 반복종료 
             clearInterval(tyInt); 
            } 
-        }  
-    }
-
-    function outHoverPoint(num) {
-        if(stopCnt2)return;
-        stopCnt2 = 1;
-        setTimeout(()=>{
-            stopCnt2 = 0; // 해제
-        }, 1700);
-
-
-        let pointText = $(`.materialMainImg>p:nth-of-type(${num-1})`)
-
-        for (let i = 0; i < 5; i++) {
-            setTimeout(() => {
-                pointText.text("")
-            }, 300);
-            
-        }
+        } 
+        
+        savePoint = num;
     }
 
     function movePoint(num){
