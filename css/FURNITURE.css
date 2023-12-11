@@ -220,18 +220,43 @@ main{
     background-color: #CDD9C5;
     border: 1px solid #6D7A71;
     transition: .3s;
+    z-index: 3;
 }
 
-.materialMainImg>.materialPoint:nth-of-type(2){
+.materialMainImg>p{
+    position: absolute;
+    width: 200px;
+    height: 35px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    transition: .8s;
+}
+
+.materialMainImg>p:nth-of-type(1){
+    top:-11%;
     left: 50%;
 }
 
-.materialMainImg>.materialPoint:nth-of-type(3){
+.materialMainImg>p:nth-of-type(2){
+    top: 46.5%;
+    left: 120%;
+}
+
+.materialMainImg>p:nth-of-type(3){
+    top: 104%;
+    left: 50%;
+}
+
+.materialPoint:nth-of-type(2){
+    left: 50%;
+}
+
+.materialPoint:nth-of-type(3){
     top: 50%;
     left: 100%;
 }
 
-.materialMainImg>.materialPoint:nth-of-type(4){
+.materialPoint:nth-of-type(4){
     top: 100%;
     left: 50%;
 }
@@ -255,6 +280,18 @@ main{
 
 .materialScreen:nth-of-type(1){
     opacity: 1;
+    height: 500px;
+    width: 640px;
+    left: -50px;
+}
+
+.materialScreen:nth-of-type(1)>p{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: #6D7A71;
 }
 
 .materialScreen>img{
@@ -284,7 +321,7 @@ main{
 }
 
 #consPZone>div>img{
-    width: 500px;
+    width: 600px;
 }
 
 #consPZone>div>p{
