@@ -44,7 +44,7 @@ $(()=>{
             stopCnt1 = 0; // 해제
         }, 1500);
 
-
+        
         var typingBool = false; 
         var typingIdx=0; 
 
@@ -91,11 +91,17 @@ $(()=>{
         stopCnt2 = 1;
         setTimeout(()=>{
             stopCnt2 = 0; // 해제
-        }, 1500);
+        }, 1700);
+
 
         let pointText = $(`.materialMainImg>p:nth-of-type(${num-1})`)
 
-        pointText.text("")
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => {
+                pointText.text("")
+            }, 300);
+            
+        }
     }
 
     function movePoint(num){
