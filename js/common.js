@@ -29,14 +29,21 @@ $(()=>{
                     "top" : `-${sctop}px`,
                     "background-color": "rgba(211, 208, 200, 0)"
                 });
+
+                $(".headMenuBtn div").css("color", "black")
+
                 $("#headLine>li").addClass("headMenuBtn");
                 $("#headLine>li").removeClass("headMenuBtn2");
             }
             else if(headLine <= sctop){
                 headBody.css({
+                    
                     "top" : `-130px`,
                     "background-color": "#6D7A71"
                 });
+                
+                $(".headMenuBtn div").css("color", "white")
+
                 $("#headLine>li").addClass("headMenuBtn2");
                 $("#headLine>li").removeClass("headMenuBtn");
             } 
