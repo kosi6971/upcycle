@@ -1,38 +1,19 @@
 section {
     padding: 50px;
-    margin: 100px 0 300px 0;
+    margin: 150px 0 300px 0;
 }
 
-.hidden {
-    display: none;
-    transition: opacity 0.3s ease;
+#galleryText {
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
 }
 
 .galleryTitle {
     font-size: 48px;
     margin-bottom: 20px;
-    transition: transform 0.5s ease-in-out;
 }
 .galleryContents {
     font-size: 20px;
-    transition: transform 0.5s ease-in-out;
-}
-.fade-out {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-}
-.scroll-down-arrow {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 24px;
-    cursor: pointer;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.scroll-down-arrow:hover {
-    opacity: 0.7;
 }
 #categoryList {
     margin-top: 100px;
@@ -83,8 +64,8 @@ section {
 #categoryList img {
     transition: .4s;
     display: block;
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
     margin-bottom: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -99,7 +80,7 @@ section {
 
 .gallery {
     margin-top: 30px;
-    margin-left: 5%;
+    margin: 0 auto;
     transform: translateY(100%);
     opacity: 0; 
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -110,9 +91,10 @@ section {
     overflow: hidden;
     border-radius: 10px;
     cursor: pointer;
-    width: 300px; /* 이미지가 부모 요소의 100% 가로폭을 차지하도록 함 */
+    width: 400px; /* 이미지가 부모 요소의 100% 가로폭을 차지하도록 함 */
     display: inline-block;
     margin-bottom: 20px;
+    margin-right: 20px;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -126,9 +108,9 @@ section {
 
 .gallery-item video {
     width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
-    cursor: pointer;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -207,21 +189,4 @@ section {
     cursor: pointer;
     font-size: 40px;
     color: #fff;
-}
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.arrow-left {
-    left: 20px;
-}
-
-.arrow-right {
-    right: 20px;
 }

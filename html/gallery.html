@@ -31,21 +31,18 @@
                 <li class="headMenuBtn">
                     <div>PRODUCT</div>
                     <ul class="subMenu subMenu2">
-                        <li><a href="../html/PORTFOLIO.html">PRODUCTING PROCESS</a></li>
+                        <li><a href="../html/PORTFOLIO.html">DESIGN CONCEPT</a></li>
                         <li><a href="../html/FURNITURE.html">FURNITURE</a></li>
                     </ul>
                 </li>
                 <li class="headMenuBtn">
-                    <div><a href="../html/gallery2.html">GALLERY</a></div>
+                    <div><a href="../html/gallery.html">GALLERY</a></div>
+                </li>
+                <li class="headMenuBtn">
+                    <div><a href="../html/Q&A.html">REVIEW</a></div>
                 </li>
                 <li class="headMenuBtn">
                     <div>CONTACT</div>
-                    <ul class="subMenu subMenu3">
-                        <li><a href="../html/Q&A.html">INTERVIEW</a></li>
-                    </ul>
-                </li>
-                <li class="headMenuBtn">
-                    <div>FOLLOW US</div>
                     <ul class="subMenu subMenu4">
                         <li><a href="https://www.instagram.com/heyday_seoil" target="_blank">INSTAGRAM</a></li>
                     </ul>
@@ -56,7 +53,7 @@
     <!-- header 구역 -->
     
     <section>
-        <div>
+        <div id = 'galleryText'>
             <p class="galleryTitle">Welcome to the Gallery World</p>
             <p class="galleryContents">Embark on a visual journey with us as we showcase the moments captured in time.</p>
             <p class="galleryContents">Each photograph tells a unique story, weaving together the threads of our shared experiences and memories.</p>
@@ -64,7 +61,7 @@
         </div>
         
         <div id="categoryList">
-            <a id="materialMuseum" href="#" onclick="showCategory('materialMuseum')" class="active">
+            <a id="materialMuseum" href="#" onclick="showCategory('materialMuseum');" class="active">
                 <img src="../img/materialMuseum.png" alt="Material Museum">
                 <span class="category-description">Explore Material Museum</span>
                 Material Museum
@@ -113,7 +110,7 @@
 
             <div class="sns">
                 <div class="instar">
-                    <a href="#">
+                    <a href="https://www.instagram.com/heyday_seoil">
                         <img src="../img/instarIcon.png" alt="instarIcon">
                         <img src="../img/instarText.png" alt="instarText">
                     </a>
@@ -128,7 +125,7 @@
     <script>
     // 이미지 파일 이름을 배열로 저장
     var materialMuseum = [];
-    for (var i = 1; i <= 20; i++) {
+    for (var i = 1; i <= 11; i++) {
         materialMuseum.push('materialMuseum (' + i + ').jpg');
     }
 
@@ -138,7 +135,7 @@
     }
 
     var productionProcess = [];
-    for (var i = 1; i <= 42; i++) {
+    for (var i = 1; i <= 14; i++) {
         productionProcess.push('productionProcess (' + i + ').jpg');
     }
 
@@ -146,7 +143,6 @@
     for (var i = 1; i <= 4; i++) {
         video.push('video (' + i + ').mp4');
     }
-
     var currentImageIndex = 0;
     var categoryImages = getCategoryImages(category);
     var category;
@@ -167,8 +163,8 @@
         modalImg.src = '../img/' + currentCategory + '/' + categoryImages[currentImageIndex];
     }
 
-    var categoryListTransformed = false;
 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     // 카테고리 클릭 시 해당 카테고리의 이미지를 표시
     function showCategory(category) {
         var categoryLinks = document.querySelectorAll('#categoryList a');
@@ -178,18 +174,11 @@
         document.getElementById(category).classList.add('active');
         document.getElementById('categoryList').addEventListener('click', function () {
             // galleryTitle, galleryContents 숨기기
-            document.querySelector('.galleryTitle').classList.add('hidden');
-            document.querySelectorAll('.galleryContents').forEach(function (element) {
-                element.classList.add('hidden');
-            });
-            // categoryList 움직이기// 상황에 맞게 조절
+            document.getElementById('galleryText').style.transform = 'translateY(-300px)';
+            document.getElementById('categoryList').style.transform = 'translateY(-250px)';
             document.getElementById('categoryList').style.opacity = '1'; // 투명도를 0으로 설정
-            if (!categoryListTransformed) {
-                document.getElementById('categoryList').style.transform = 'translateY(-150px)';
-                categoryListTransformed = true;
-            }
             // 갤러리 보이도록 스타일 변경
-            document.getElementById('imageGallery').style.transform = 'translateY(0)';
+            document.getElementById('imageGallery').style.transform = 'translateY(-100px)';
             document.getElementById('imageGallery').style.opacity = '1'; // 투명도를 1로 설정
 
             // 추가로 필요한 동작 수행 (예: showCategory 함수 호출)
@@ -198,7 +187,6 @@
         // 나타나는 효과를 위한 setTimeout 사용
         setTimeout(function () {
             currentCategory = category;
-            document.getElementById('categoryList').style.transform = 'translateY(0)';
             categoryImages = getCategoryImages(category);
             // 갤러리 동적으로 추가
             var modalGallery = document.getElementById('imageGallery');
@@ -216,9 +204,6 @@
                     var elapsed = currentTime - startTime;
                     opacity = elapsed / 1500; // 1000ms 동안 페이드인
                     imageElement.style.opacity = Math.min(opacity, 1);
-                    if (opacity >= 1) {
-                        initializeMasonry();
-                    }
                     if (opacity < 1) {
                         requestAnimationFrame(animate);
                         
@@ -244,13 +229,14 @@
                 galleryItem.appendChild(description);
 
                 if (file.endsWith('.mp4')) {
-                    // 동영상의 경우 썸네일 이미지 사용
-                    var thumbnail = document.createElement('img');
-                    thumbnail.src = '../img/'; // 실제 썸네일 이미지로 대체
+                    // 동영상
+                    var thumbnail = document.createElement('video');
+                    thumbnail.src = '../img/' + category + '/' + file // 실제 썸네일 이미지로 대체
                     thumbnail.alt = category + ' Video ' + (index + 1);
                     fadeInImage(thumbnail, index * 100);
                     galleryItem.appendChild(thumbnail);
-                } else {
+                }
+                else {
                     var image = document.createElement('img');
                     image.src = '../img/' + category + '/' + file;
                     image.alt = category + ' Image ' + (index + 1);
@@ -276,7 +262,6 @@
                 var masonry = new Masonry(modalGallery, {
                     itemSelector: '.gallery-item',
                     columnWidth: '.gallery-item',
-                    gutter: 20, // 간격을 필요에 따라 조절
                     fitWidth: true, // 플루이드 레이아웃을 사용하려면 true로 설정
                 });
                 applyHoverStyles();
@@ -284,8 +269,10 @@
                 imagesLoaded(modalGallery, function () {
                     masonry.layout();
                 });
+                videosLoaded(thumbnail, function () {
+                    masonry.layout();
+                });
             }
-            
         }, 500); // 0.5초 후에 실행 (트랜지션 시간과 맞춤)
     }
     // 카테고리 숨기기 함수
@@ -296,20 +283,19 @@
         var imageGallery = document.getElementById('imageGallery');
 
         // galleryTitle, galleryContents 보이기
-        galleryTitle.classList.remove('hidden');
-        galleryContents.forEach(function (element) {
-            element.classList.remove('hidden');
-        });
+        document.getElementById('galleryText').style.transform = 'translateY(0)';
+        document.getElementById('categoryList').style.transform = 'translateY(0)';
 
         // 갤러리 숨기기
         document.getElementById('imageGallery').style.opacity = '0'; // 투명도를 0으로 설정
-        document.getElementById('imageGallery').style.transform = 'translateY(150px)';
+        document.getElementById('imageGallery').style.transform = 'translateY(0)';
         categoryListTransformed = false;
         // 추가로 필요한 동작 수행
     }
     // 초기 상태 저장
     var initialCategory = 'materialMuseum';
     var scrolled = false;
+    var first = true;
     // 스크롤 이벤트 핸들러
     function handleScroll() {
         // 현재 스크롤 위치 가져오기
@@ -318,25 +304,23 @@
         // 일정 스크롤 위치에서 showCategory 또는 hideCategory 호출
         if (scrollPosition > 50 && !scrolled) {
             console.log('확인문구')
-            document.querySelector('.galleryTitle').classList.add('hidden');
-            document.querySelectorAll('.galleryContents').forEach(function (element) {
-                element.classList.add('hidden');
-            });
+            
+            document.getElementById('galleryText').style.transform = 'translateY(-300px)';
+            document.getElementById('categoryList').style.transform = 'translateY(-250px)';
             document.getElementById('imageGallery').style.opacity = '1';
-            document.getElementById('imageGallery').style.transform = 'translateY(0)';
+            document.getElementById('imageGallery').style.transform = 'translateY(-100px)';
             scrolled = true;
         } else if (scrollPosition <= 50 && scrolled) {
             console.log('확인문구')
-            hideCategory();
             scrolled = false;
+            hideCategory();
         }
     }
 
     document.addEventListener('DOMContentLoaded', function () {
         // 스크롤 이벤트에 핸들러 연결
         window.addEventListener('scroll', handleScroll);
-        // 초기에 hideCategory 호출하여 초기 상태 설정
-        hideCategory();
+        
     });
     // 카테고리에 따라 이미지 배열 반환
     function getCategoryImages(category) {
@@ -403,54 +387,63 @@
     var descriptions = {
         'materialMuseum': [
             'A meeting at the cafe.',
-            'A bicycle and its disassembled parts.',
-            'Collaborative ingredient research.',
-            'Upcycled Hanbok',
-            'Sponge Board',
-            'Upcycled Products Section',
-            'Upcycled small wooden pieces.',
-            'Upcycled cart and chairs.',
-            'Upcycled wooden materials.',
-            'A chair made from upcycled construction materials.',
-            'Everyday items upcycled from fabric and leather.',
-            'A bench upcycled from a skateboard.',
-            'Furniture upcycled from construction plywood and containers.',
-            'Artistic table crafted from upcycled discarded wood.',
-            'Artwork crafted from upcycled plastic.',
-            'Artistic robot crafted from upcycled plastic.',
-            'Artistic tables and items upcycled from plastic and ceramic materials.',
-            'Fabric and bags upcycled from reclaimed leather and cloth.',
-            'Upcycled wooden table.',
-            'A brief overview of waste management.'
-            // ... 추가 이미지에 대한 설명 ...
+            'Bicycles and their disassembled components.',
+            'Material exploration.',
+            'A hanbok crafted by upcycling various fabrics.',
+            'Small wooden pieces suitable for recycling.',
+            'Upcycled cart and chair.',
+            'Upcycled bench.',
+            'Upcycled personal items crafted from various fabrics and leather materials.',
+            'A robot crafted from upcycled plastic materials.',
+            'Upcycled table and items.',
+            'Upcycled table storage unit.',
+            '',
+            '',
+            '',
+            '',
         ],
         'designSelection': [
-            'Shelf design crafted by upcycling chairs',
-            'Creative design ideas in the making.',
-            'The referenced web page design.',
-            'A design sketch of a storage cabinet upcycled from chairs.',
-            'Nature-themed aquarium design using upcycled chairs.',
-            'Chair CAD drawing.',
-            'Various multipurpose shelf designs upcycled from recycled chairs',
-            'Upcycled chair turned into a plant pot chair.',
-            "Our team's concept and storytelling.",
-            'A chair repurposed into a dual-purpose side table through upcycling.'
+            'Upcycled chair transformed into a bookshelf.',
+            'Various upcycling ideas for repurposing chairs.',
+            'The design of the website inspired by creativity.',
+            'Upcycled storage cabinet made from chairs.',
+            'Nature-inspired upcycled chair design.',
+            'Initial chair CAD blueprint.',
+            'Upcycled chair with added drawer functionality and a table crafted from repurposed chairs.',
+            'Upcycled chair transformed into a flower pot.',
+            "Our team's initial concept and storytelling.",
+            'Upcycled chair with added drawer functionality and a table crafted from repurposed chairs.',
+            '',
+            '',
+            '',
+            '',
             // ... 추가 이미지에 대한 설명 ...
         ],
         'productionProcess': [
-            'Crafting and production journey.',
-            'Behind the scenes of our workshop.',
-            '',
-            '',
-            '',
+            'The initial materials used for creating a chair.',
+            'Dismantling a chair for creating a new item.',
+            'Sanding the chair with sandpaper in preparation for painting.',
+            'The disassembled parts of the fully sanded chair.',
+            'The materials for renewing the chair.',
+            'Painting the components of the chair.',
+            'The chair components after completing the painting process.',
+            'Assembling and securing the components back together.',
+            'Soaking rattan in water.',
+            'Crafting the chair by weaving rattan onto it.',
+            'Capturing moments of togetherness.',
+            'Creating macramé crafts to weave onto the chair.',
+            'The finished look of the chair with intricately woven rattan craftsmanship.',
+            'The finished upcycled shelf.',
             '',
             '',
             '',
             // ... 추가 이미지에 대한 설명 ...
         ],
         'video': [
-            'Watch our latest video creation.',
-            'Visual storytelling in motion.',
+            'Coating process.',
+            'Painting process.',
+            'Parts sanding process.',
+            'Initial sanding process.',
             // ... 추가 동영상에 대한 설명 ...
         ]
     };
