@@ -13,7 +13,7 @@ $(()=>{
         }
         else{
             thisBody.css({
-                "height" : "1550px"
+                "height" : "800px"
             });
         }
 
