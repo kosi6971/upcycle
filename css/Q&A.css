@@ -5,6 +5,11 @@ main>h1{
     font-size: 50px;
 }
 
+main>p{
+    margin-top: 20px;
+    font-size: 30px;
+}
+
 #contentBodyZone{
     margin: 120px 0 150px 0;
 }

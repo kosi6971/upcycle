@@ -654,11 +654,23 @@
 }
 
 .projectMainBtnZone>div:first-of-type{
-    top: 100px;
+    top: 50px;
 }
 
 .projectMainBtnZone>div:last-of-type{
-    top: 545px;
+    top: 495px;
+}
+
+.projectMainBtnZone>p{
+    position: absolute;
+    transform: translateX(-50%);
+    left: 20%;
+    top: 180px;
+    font-size: 25px;
+}
+
+.projectMainBtnZone>p:last-of-type{
+    top: 625px;
 }
 
 .projectMainBtnZone>div>div{

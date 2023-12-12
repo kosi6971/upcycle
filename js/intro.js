@@ -202,9 +202,9 @@ $(()=>{
     // **************배너 부분*************
     // 사진 경로
     const bannerImg = [
-        "../img/banner_test-1.jpg",
-        "../img/banner_test-2.jpg",
-        "../img/banner_test-3.jpg"
+        "../img/banner1.jpg",
+        "../img/banner2.jpg",
+        "../img/banner3.jpg"
     ];
     // 이미지 개수
     const bannerBtn = $(".bannerBtnZone>button");
