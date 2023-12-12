@@ -653,24 +653,20 @@
     border: 3px solid #BFB583;
 }
 
-.projectMainBtnZone>div:first-of-type{
-    top: 50px;
-}
-
 .projectMainBtnZone>div:last-of-type{
-    top: 495px;
+    top: 465px;
 }
 
 .projectMainBtnZone>p{
     position: absolute;
     transform: translateX(-50%);
     left: 20%;
-    top: 180px;
+    top: 130px;
     font-size: 25px;
 }
 
 .projectMainBtnZone>p:last-of-type{
-    top: 625px;
+    top: 595px;
 }
 
 .projectMainBtnZone>div>div{

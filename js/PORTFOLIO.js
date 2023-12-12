@@ -77,12 +77,8 @@ $(()=>{
     subBtn.click(function(){
         $(this).css({
             "color": "red",
-            "border-top": "1px solid red",
-            "border-bottom": "1px solid red"
         }).siblings("button").css({
             "color": "black",
-            "border-top": "1px solid black",
-            "border-bottom": "1px solid black",
         })
     });
     // **************sub Btn**************
