@@ -43,10 +43,19 @@ main>p{
     overflow: hidden;
 }
 
+.userAnswer>div{
+    margin-bottom: 30px;
+}
+
 .userAnswer>div>h1{
     font-size: 40px;
     text-align: left;
     margin: 10px 50px;
+}
+
+.userAnswer>div>div>p{
+    font-size: 20px;
+    padding: 20px;
 }
 
 .userAnswer>div:nth-child(2)>h1, .userAnswer>div:nth-child(4)>h1{
