@@ -141,6 +141,7 @@
 
 
 .furnitureBtnZone{
+    width: 330px;
     position: relative;
     display: inline-flex;
     flex-direction: column;
